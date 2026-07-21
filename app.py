@@ -359,8 +359,8 @@ def build_cli_command(
         cmd += ["--ref_text", ref_text_value]
     if vocoder_name:
         cmd += ["--vocoder_name", vocoder_name]
-    if remove_silence is not None:
-        cmd += ["--remove_silence", str(remove_silence).lower()]
+    if remove_silence:
+        cmd += ["--remove_silence"]
     if target_rms is not None:
         cmd += ["--target_rms", str(target_rms)]
     if speed is not None:
@@ -369,10 +369,10 @@ def build_cli_command(
         cmd += ["--cfg_strength", str(cfg_strength)]
     if nfe_step is not None:
         cmd += ["--nfe_step", str(nfe_step)]
-    if fix_duration is not None:
-        cmd += ["--fix_duration", str(fix_duration).lower()]
+    if fix_duration:
+        cmd += ["--fix_duration"]
     if cross_fade_duration is not None:
         cmd += ["--cross_fade_duration", str(cross_fade_duration)]
-    if save_chunk is not None:
-        cmd += ["--save_chunk", str(save_chunk).lower()]
+    if save_chunk:
+        cmd += ["--save_chunk"]
     return cmd
